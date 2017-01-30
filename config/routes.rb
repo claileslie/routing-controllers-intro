@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get '/kitten/:width/:height' => 'pages#kitten'
 
   get '/kitten/many/:width/:height' => 'pages#kittens'
+
+  get '/secrets/:magic_word' => 'pages#secrets'
 end

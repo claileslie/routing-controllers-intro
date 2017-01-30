@@ -14,6 +14,15 @@ class PagesController < ApplicationController
     redirect_to "/welcome"
   end
 
+  def secrets
+    if
+      params[:magic_word] != "butts"
+        flash[:alert] = "Hint: WWTD? (What Would Tina Do?)"
+        redirect_to '/welcome'
+      end
+
+  end
+
   before_action :set_kitten_url, only: [:kitten, :kittens]
 
   def kitten
