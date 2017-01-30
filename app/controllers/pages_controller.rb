@@ -11,9 +11,18 @@ class PagesController < ApplicationController
 
   def contest
     @header = "Gagner!"
+    redirect_to "/welcome"
   end
 
+  before_action :set_kitten_url, only: [:kitten, :kittens]
+
   def kitten
+  end
+
+  def kittens
+  end
+
+  def set_kitten_url
     requested_width = params[:width]
     requested_height = params[:height]
     @kitten_url = "http://lorempixel.com/#{requested_width}/#{requested_height}/cats"
